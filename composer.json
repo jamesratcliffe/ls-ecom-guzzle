@@ -1,0 +1,32 @@
+{
+    "name": "lightspeedhq/ls-ecom-guzzle",
+    "description": "A Guzzle HTTP Client extension for Lightspeed eCommerce.",
+    "keywords": [
+        "lightspeed",
+        "ecommerce",
+        "pos",
+        "guzzle",
+        "api",
+        "rest"
+    ],
+    "homepage": "https://github.com/jamesratcliffe/ls-ecom-guzzle",
+    "authors": [
+        {
+            "name": "Michael Carey",
+            "email": "michael.carey@lightspeedhq.com",
+        },
+        {
+            "name": "James Ratcliffe",
+            "email": "james.ratcliffe@lightspeedhq.com",
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "LightspeedHQ\\Ecom\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6",
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
