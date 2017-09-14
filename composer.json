@@ -1,6 +1,6 @@
 {
     "name": "lightspeedhq/ls-ecom-guzzle",
-    "description": "A Guzzle HTTP Client extension for Lightspeed eCommerce.",
+    "description": "A Guzzle HTTP Client extension for Lightspeed eCommerce",
     "keywords": [
         "lightspeed",
         "ecommerce",
@@ -21,7 +21,7 @@
         }
     ],
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "LightspeedHQ\\Ecom\\": "src/"
         }
     },
