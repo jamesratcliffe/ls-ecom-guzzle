@@ -6,8 +6,8 @@ use LightspeedHQ\Ecom\EcomClient;
 
 session_start();
 
-$cluster = 'eu1';     // eu1 or us1
-$language = 'en';     // Shop language
+$cluster = 'us1';     // eu1 or us1
+$language = 'us';     // Shop language
 $key = 'xxxx';        // API key
 $secret = 'xxxx';     // API secret
 
@@ -15,7 +15,7 @@ $client = new EcomClient($cluster, $language, $key, $secret);
 
 // GET request with some URL paramters.
 $query = ['since_id', 1];
-response = $client->get('customers', ['query' => $query]);
+$response = $client->get('customers', ['query' => $query]);
 $customers = json_decode($response->getBody(), true)['Item'];
 var_dump($customers[0]);
 
