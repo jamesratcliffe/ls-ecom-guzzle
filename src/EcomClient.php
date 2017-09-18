@@ -109,16 +109,19 @@ class EcomClient extends Client
             }
             if ($response) {
                 $code = $response->getStatusCode();
-                $log_message = 'HTTP Error ' . $code . ":\n" . $response->getBody();
+                if ($code >= 400) {
+                    $response_json = json_encode(json_decode($response->getBody()), JSON_PRETTY_PRINT);
+                    $log_message = 'HTTP Error ' . $code . ":\n" . $response_json;
+                }
                 // 429, 502, 503, 504: try again
                 if (in_array($code, [429, 502, 503, 504])) {
                     $should_retry = true;
                 }
             }
+            if ($log_message) {
+                error_log($log_message, 0);
+            }
             if ($should_retry) {
-                if ($log_message) {
-                    error_log($log_message, 0);
-                }
                 if ($retries > 0) {
                     error_log('Retry ' . $retries . '…', 0);
                 }
