@@ -41,7 +41,7 @@ $client = new EcomClient($cluster, $language, $key, $secret);
 // GET request with some URL paramters.
 $query = ['since_id', 1];
 $response = $client->get('customers', ['query' => $query]);
-$customers = json_decode($response->getBody(), true)['Item'];
+$customers = json_decode($response->getBody(), true)['customers'];
 echo '<pre>';
 echo '<h3>GET Test</h3>';
 var_dump($customers[0]);
